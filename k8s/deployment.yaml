@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-final-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-final-app
+  template:
+    metadata:
+      labels:
+        app: jenkins-final-app
+    spec:
+      containers:
+        - name: jenkins-final-app
+          image: IMAGE_PLACEHOLDER
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_ENV
+              value: ENV_PLACEHOLDER
