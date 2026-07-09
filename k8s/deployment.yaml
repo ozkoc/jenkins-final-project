@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: jenkins-final-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: jenkins-final-app

@@ -62,7 +62,7 @@ pipeline {
                                 sed "s|IMAGE_PLACEHOLDER|$DOCKERHUB_USER/$IMAGE_NAME:$BUILD_NUMBER|g; s|ENV_PLACEHOLDER|$NS|g" k8s/deployment.yaml | kubectl -n $NS apply -f -
 
                                 kubectl -n $NS apply -f k8s/service.yaml
-                                kubectl -n $NS rollout status deployment/jenkins-final-app --timeout=120s
+                                kubectl -n $NS rollout status deployment/jenkins-final-app --timeout=300s
                             done
                         '''
                     }
