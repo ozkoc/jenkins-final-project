@@ -8,4 +8,4 @@ spec:
     app: jenkins-final-app
   ports:
     - port: 80
-      targetPort: 5000
+      targetPort: 80

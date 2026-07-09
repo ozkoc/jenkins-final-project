@@ -16,7 +16,7 @@ spec:
         - name: jenkins-final-app
           image: IMAGE_PLACEHOLDER
           ports:
-            - containerPort: 5000
+            - containerPort: 80
           env:
             - name: APP_ENV
               value: ENV_PLACEHOLDER

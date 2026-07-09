@@ -21,7 +21,7 @@ pipeline {
                         passwordVariable: 'DOCKERHUB_PASS'
                     )]) {
                         sh '''
-                            docker build -t $DOCKERHUB_USER/$IMAGE_NAME:$BUILD_NUMBER .
+                            DOCKER_BUILDKIT=0 docker build --network=host -t $DOCKERHUB_USER/$IMAGE_NAME:$BUILD_NUMBER .
                             docker tag $DOCKERHUB_USER/$IMAGE_NAME:$BUILD_NUMBER $DOCKERHUB_USER/$IMAGE_NAME:latest
                         '''
                     }
